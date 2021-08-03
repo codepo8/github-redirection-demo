@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% assign time = 0 %}
     {% assign targetname = page.target %}
+    {% assign title = Redirecting to {{ targetname }} %}
  
     {% if page.time %}
     {% assign time = page.time %}
@@ -15,14 +16,18 @@
 
     <meta http-equiv="refresh" content="{{ time }};url={{ page.target }}"/>
     <link rel="canonical" href="{{ page.target }}"/>
-    <title>Redirecting to {{ targetname }}</title>
+    {% if page.targettitle %}
+    <title>{{ title }}</title>
+    {% endif %}
 </head>
 <body>
-{{ time }}
+    <h1>{{ title }}</h1>
+
+    {{ time }}
 {{ targetname }}
 
 
-    If you are not redirected automatically, follow <a href='{{ page.redirect }}'>this link</a>.
+    If you are not redirected automatically, follow <a href='{{ page.target }}'>this link</a>.
 </body>
 </html>
 
