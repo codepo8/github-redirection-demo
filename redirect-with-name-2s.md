@@ -1,5 +1,5 @@
 ---
-targettitle: Moo
+targettitle: Taking you to example.com
 layout: forward
 target: https://example.com
 targetname: Example.com

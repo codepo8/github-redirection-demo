@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% assign time = 2 %}
     {% assign targetname = page.target %}
-    {% assign title = Redirecting to {{ targetname }} %}
  
     {% if page.time %}
     {% assign time = page.time %}
@@ -14,28 +13,25 @@
     {% assign targetname = page.targetname %}
     {% endif %}
 
+    {% capture title %}Redirecting to {{ targetname }}{% endcapture %}
+    {% if page.title %}
+    {% assign title = page.title %}
+    {% endif %}
+
     <meta http-equiv="refresh" content="{{ time }};url={{ page.target }}"/>
     <link rel="canonical" href="{{ page.target }}"/>
-    {% if page.targettitle %}
     <title>{{ title }}</title>
-    {% endif %}
 </head>
 <body>
     <h1>{{ title }}</h1>
-    
-    
-    
-    {% if page.targettitle %}
-    <p>This document has moved!</p>
-    {% else %}
+   
+    {% if page.message %}
     <p>{{ page.message }}</p>
+    {% else %}
+    <p>This document has moved!</p>
     {% endif %}
 
-    {{ time }}
-{{ targetname }}
- 
-
-    <p>If you are not redirected automatically, follow <a href='{{ page.target }}'>this link</a>.</p>
+    <p>Redirecting to <a href="{{ page.target }}">{{ targetname }}</a> in {{ time }} seconds.</p>
 
 </body>
 </html>
