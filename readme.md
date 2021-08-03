@@ -1,6 +1,6 @@
-# Redirecting with GitHub pages examples
+# Redirecting with GitHub pages
 
-This is a quick demo showing you how you can redirect markdown files in GitHub pages using an HTML template.
+This is a quick demo showing you how you can redirect markdown files in GitHub pages using an HTML template. You can check the [source code and fork/change it to your needs](https://github.com/codepo8/github-redirection-demo/).
 
 You can use the `forward.html` layout template to redirect any one of your markdown files to another document. By default, it redirects directly, but you can tweak the time and the messaging you want to show to your needs using Markdown frontmatter.
 
@@ -22,12 +22,14 @@ target: https://example.com
 You have a few more options to set to customise your redirect:
 
 ```markdown
+---
 layout: forward
 target: https://example.com
 targetname: Example.com
 targettitle: Taking you to example.com
 time: 10
 message: This isn't here any more!
+---
 ```
 
 * `target` is the URL to redirect to. This defaults to the `target` URL
