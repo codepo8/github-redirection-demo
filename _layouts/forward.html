@@ -2,23 +2,27 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="0;url={{ page.redirect }}"/> -->
-    <link rel="canonical" href="{{ page.redirect }}"/>
-    <title>Page Redirection</title>
-</head>
-<body>
     {% assign time = 0 %}
+    {% assign targetname = page.target %}
+ 
     {% if page.time %}
-    {% assign time = page.tine %}
+    {% assign time = page.time %}
+    {% endif %}
+    
+    {% if page.targetname %}
+    {% assign targetname = page.targetname %}
     {% endif %}
 
-    {{ time }}
+    <!-- <meta http-equiv="refresh" content="{{ time }};url={{ page.target }}"/> -->
+    <link rel="canonical" href="{{ page.target }}"/>
+    <title>Redirecting to {{ targetname }}</title>
+</head>
+<body>
+{{ time }}
+{{ targetname }}
 
 
     If you are not redirected automatically, follow <a href='{{ page.redirect }}'>this link</a>.
-{% if page.next %}
-<p class="next">Next: <a href="{{ page.next }}">{{ page.nexttitle }}</a></p>
-{% endif %}
 </body>
 </html>
 
