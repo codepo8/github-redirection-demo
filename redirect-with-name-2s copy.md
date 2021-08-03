@@ -1,5 +1,5 @@
 ---
-title: Travel and conference participation -  The Developer Advocacy Handbook
+targettitle: Moo
 layout: forward
 target: https://example.com
 targetname: Example.com
