@@ -14,8 +14,8 @@
     {% endif %}
 
     {% capture title %}Redirecting to {{ targetname }}{% endcapture %}
-    {% if page.title %}
-    {% assign title = page.title %}
+    {% if page.targettitle %}
+    {% assign title = page.targettitle %}
     {% endif %}
 
     <meta http-equiv="refresh" content="{{ time }};url={{ page.target }}"/>
