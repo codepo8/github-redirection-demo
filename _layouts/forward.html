@@ -22,12 +22,21 @@
 </head>
 <body>
     <h1>{{ title }}</h1>
+    
+    
+    
+    {% if page.targettitle %}
+    <p>This document has moved!</p>
+    {% else %}
+    <p>{{ page.message }}</p>
+    {% endif %}
 
     {{ time }}
 {{ targetname }}
+ 
 
+    <p>If you are not redirected automatically, follow <a href='{{ page.target }}'>this link</a>.</p>
 
-    If you are not redirected automatically, follow <a href='{{ page.target }}'>this link</a>.
 </body>
 </html>
 
